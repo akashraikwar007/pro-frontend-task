@@ -16,4 +16,4 @@ const PublicRoute = ({
   return <Outlet />;
 };
 
-export default PublicRoute;
+export default PublicRoute; 
