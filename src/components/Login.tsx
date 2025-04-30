@@ -4,7 +4,7 @@ import { login } from "../api/authApi";
 import { LoginRequest } from "../api/authTypes";
 import { useAuth } from "../context/AuthContext";
 
-const Login: React.FC = () => {
+const HomeLogin: React.FC = () => {
   const [form, setForm] = useState<LoginRequest>({ username: "", password: "" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);

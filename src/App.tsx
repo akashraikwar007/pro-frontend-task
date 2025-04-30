@@ -25,20 +25,28 @@ const AppContent = () => {
       <Navbaar />
       <div className="container mt-4">
         <Routes>
+          {/* Redirect root based on auth */}
+          <Route
+            path="/"
+            element={
+              isAuthenticated ? <Navigate to="/userlist" replace /> : <Navigate to="/login" replace />
+            }
+          />
+
           {/* Public routes */}
           <Route element={<PublicRoute isAuthenticated={isAuthenticated} />}>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Route>
-          
+
           {/* Protected routes */}
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/userlist" element={<UserList />} />
             <Route path="/users/new" element={<UserForm />} />
             <Route path="/users/edit/:id" element={<UserForm />} />
           </Route>
-          
+
           {/* Catch all route */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
