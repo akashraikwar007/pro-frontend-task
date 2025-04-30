@@ -29,7 +29,7 @@ const AppContent = () => {
           <Route
             path="/"
             element={
-              isAuthenticated ? <Navigate to="/userlist" replace /> : <Navigate to="/login" replace />
+              isAuthenticated ? <Navigate to="/home" replace /> : <Navigate to="/login" replace />
             }
           />
 
